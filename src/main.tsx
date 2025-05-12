@@ -5,7 +5,8 @@ import "./index.css";
 import { Amplify } from "aws-amplify";
 import awsExports from "./aws-exports";
 
-Amplify.configure(awsExports);
+// Configure Amplify with the outputs from amplify_outputs.json
+Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

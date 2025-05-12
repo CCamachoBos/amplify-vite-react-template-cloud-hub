@@ -10,6 +10,7 @@
       "StackName": "amplify-cloudcrewhub-cloudcrew-22bd5",
       "StackId": "arn:aws:cloudformation:us-east-2:229116416382:stack/amplify-cloudcrewhub-cloudcrew-22bd5/e9ffca00-29cb-11f0-93c8-0a3c25621dab",
       "AmplifyAppId": "d2rdr2vejby7co"
+<<<<<<< HEAD
     },
     "categories": {
       "hosting": {
@@ -21,6 +22,8 @@
       "auth": {
         "cloudcrewhub5b65f1bc": {}
       }
+=======
+>>>>>>> 970e86913f06e15f426e66ca6239ffbd374aa7a4
     }
   }
 }
