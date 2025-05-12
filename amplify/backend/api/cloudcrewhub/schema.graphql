@@ -1,0 +1,79 @@
+type User @model
+  @auth(rules: [
+    { allow: owner, ownerField: "owner", identityClaim: "cognito:username" },
+    { allow: private, operations: [read] }
+  ]) {
+  id: ID!
+  owner: String
+  username: String!
+  email: AWSEmail!
+  aws_badges: [String]
+  portfolio_projects: [ID]
+  goals: String
+  connections: [ID]
+  created_at: AWSDateTime
+  updated_at: AWSDateTime
+  profile_picture: String
+  social_links: [AWSURL]
+}
+
+type Project @model
+  @auth(rules: [
+    { allow: owner, ownerField: "owner", identityClaim: "cognito:username" },
+    { allow: private, operations: [read] }
+  ]) {
+  id: ID!
+  owner: String
+  user_id: ID!
+  title: String!
+  description: String!
+  architecture_diagram: String
+  aws_services_used: [String]
+  lessons_learned: String
+  created_at: AWSDateTime
+  updated_at: AWSDateTime
+  tags: [String]
+  visibility: String
+}
+
+type Message @model
+  @auth(rules: [
+    { allow: owner, ownerField: "owner", identityClaim: "cognito:username" },
+    { allow: private, operations: [read] }
+  ]) {
+  id: ID!
+  owner: String
+  channel_id: ID!
+  user_id: ID!
+  content: String!
+  sent_at: AWSDateTime
+}
+
+type ForumPost @model
+  @auth(rules: [
+    { allow: owner, ownerField: "owner", identityClaim: "cognito:username" },
+    { allow: private, operations: [read] }
+  ]) {
+  id: ID!
+  owner: String
+  topic_id: ID!
+  title: String!
+  created_by_user_id: ID!
+  created_at: AWSDateTime
+  last_activity_at: AWSDateTime
+}
+
+type ProgressItem @model
+  @auth(rules: [
+    { allow: owner, ownerField: "owner", identityClaim: "cognito:username" },
+    { allow: private, operations: [read] }
+  ]) {
+  id: ID!
+  owner: String
+  user_id: ID!
+  item_type: String!
+  milestone_name: String!
+  status: String!
+  achieved_date: AWSDateTime
+  details: String
+}
